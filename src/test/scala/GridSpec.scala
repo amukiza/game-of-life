@@ -1,6 +1,6 @@
 import org.scalatest._
 
-import GameOfLife._
+import Status._
 
 class GridSpec extends WordSpec with ShouldMatchers  {
 

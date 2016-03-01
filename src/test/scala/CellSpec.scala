@@ -1,6 +1,6 @@
 import org.scalatest._
 
-import GameOfLife.{DEAD, ALIVE}
+import Status.{DEAD, ALIVE}
 
 class CellSpec extends WordSpec with ShouldMatchers {
 
