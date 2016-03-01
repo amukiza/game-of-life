@@ -19,12 +19,13 @@ object GameOfLife {
       row.foreach( cell => if(cell.isAlive) print(" * ") else print("   "))
       println()
     }
-    println("---------")
+    Thread.sleep(500)
+    System.out.print("\033[H\033[2J");
   }
 
   def main (args: Array[String]) {
 
-    var grid = Grid(generateCells(10))
+    var grid = Grid(generateCells(30))
 
     (0 until 100).foreach{ _ =>
       grid = grid.next
