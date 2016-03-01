@@ -35,6 +35,7 @@ class CellSpec extends WordSpec with ShouldMatchers {
     val cell = Cell(ALIVE)
 
     cell.transform(1).alive shouldBe DEAD
+    cell.transform(0).alive shouldBe DEAD
   }
 
   "know his/her neighborhood" in {

@@ -1,12 +1,15 @@
 
 case class Grid(cells: List[List[Cell]]) {
 
-  def aliveNeighbors(cell: Cell): Int = cells.flatten.count(_.near(cell.position))
+  def getCells:List[List[Cell]] = cells
+
+  def aliveNeighbors(cell: Cell): Int = cells.flatten.filter(_.near(cell.position)).count(_.isAlive)
 
   def next: Grid =
-    Grid(
+    this.copy(
       cells.map { row =>
         row.map( cell => cell.transform(aliveNeighbors(cell)) )
       }
     )
+
 }
