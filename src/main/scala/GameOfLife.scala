@@ -15,22 +15,23 @@ object GameOfLife {
   }
 
   def printGrind(grid: Grid): Unit = {
+    print("\033[H\033[2J")
+
     grid.getCells.foreach{row =>
       row.foreach( cell => if(cell.isAlive) print(" * ") else print("   "))
       println()
     }
+
     Thread.sleep(500)
-    System.out.print("\033[H\033[2J");
   }
 
   def main (args: Array[String]) {
 
     var grid = Grid(generateCells(30))
-
-    (0 until 100).foreach{ _ =>
+    while (true) {
       grid = grid.next
       printGrind(grid)
-    }
+    } 
 
   }
 
